@@ -20,15 +20,8 @@ int main(){
 	//draw_clock();
 	//draw_oto();
 	//draw_Space();
-	
-	//draw_lapPhuong();
-//	int a = (int)(581/5)*5;
-//	cout<<a<<endl<<endl;
-//	line_netDut(504,586,504,288,RED);
-	//draw_elipse(500,500,100,50,BLUE);
-	
+	//draw_lapPhuong();	
 	//draw_hinhCau();
-	
 	getch();
 	closegraph();
 	return 0;
