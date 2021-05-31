@@ -20,10 +20,8 @@ int main(){
 	//draw_clock();
 	//draw_oto();
 	//draw_Space();
-	
 	//draw_lapPhuong();	
 	//draw_hinhCau();
-	
 	getch();
 	closegraph();
 	return 0;
