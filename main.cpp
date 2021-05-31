@@ -14,8 +14,7 @@ int main(){
 	int gd = DETECT, gm;
 	initwindow(1500, 900);
 	setbkcolor(WHITE);		
-    cleardevice();			//background screen BGI
-		
+    cleardevice();		
 	//frame();
 	menu();
 	//draw_clock();
