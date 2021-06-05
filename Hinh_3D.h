@@ -47,9 +47,8 @@ void MT_chieu3D(float MTC[4][4], float r);
 
 void chuyenDoi3D_2D(float A[3]);
 
-
 void draw_OXYZ();
-
+void nhap_GT_HinhHop();
 void draw_lapPhuong();
 
 void draw_hinhCau();

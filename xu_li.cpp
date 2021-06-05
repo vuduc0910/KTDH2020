@@ -66,7 +66,8 @@ void xuli_menu(){
 					floodfill(5*size+x_frame+300+2,y_frame+150+2,0);
 					if(ve_2d ==1)
 					{	
-	
+						
+						draw_OXY(RED);
 						draw_oto();			
 						clear_Screen();
 						
@@ -88,6 +89,7 @@ void xuli_menu(){
 					floodfill(5*size+x_frame+300+2,y_frame+220+2,0);
 					if(ve_2d ==1)
 					{
+						draw_OXY(BLUE);
 						draw_clock();	
 						clear_Screen();			
 					}
@@ -108,6 +110,7 @@ void xuli_menu(){
 					floodfill(5*size+x_frame+300+2,y_frame+290+2,0);
 					if(ve_2d ==1)
 					{
+						draw_OXY(BLUE);
 						draw_Space();
 						clear_Screen();			
 					}

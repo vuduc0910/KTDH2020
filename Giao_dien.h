@@ -7,7 +7,6 @@ using namespace std;
 
 
 void frame();
-void draw_OXOY(int color);
 void draw_OXY(int color);
 void menu();
 void xuli_menu();
