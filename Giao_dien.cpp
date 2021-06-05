@@ -19,60 +19,31 @@ void frame(){
 	}	
 }
 
-void draw_OXOY(int color)
-{
-	setcolor(color);
-	line(x_frame-50, 5*size/2+ y_frame, x_frame+size*5+50, 5*size/2+ y_frame);  // hoanh
-	line(5*size/2+ x_frame, y_frame-50, 5*size/2+x_frame, y_frame+size*5+50); 	// tung
-	reset_color();
-}
 void draw_OXY(int color){
 	
-	if(color == WHITE)
-	{
-		draw_OXOY(color);
-		draw_Triangle(x_frame-50,5*size/2+ y_frame,
-								x_frame-25,5*size/2+ y_frame-10,
-								x_frame-25,5*size/2+ y_frame+10,color);
-		draw_Triangle(x_frame+size*5+50, 5*size/2+ y_frame,
-								x_frame+size*5+25, 5*size/2+ y_frame-10,
-								x_frame+size*5+25, 5*size/2+ y_frame+10,color);
-								
-		draw_Triangle(5*size/2+ x_frame-10, y_frame-25,
-								5*size/2+ x_frame+10, y_frame-25,
-								5*size/2+ x_frame, y_frame-50, color);
-		draw_Triangle(5*size/2+x_frame-10, y_frame+size*5+25,
-								5*size/2+x_frame+10, y_frame+size*5+25,
-								5*size/2+x_frame, y_frame+size*5+50,color);
-								
-		settextstyle(3,0,2);						
-		outtextxy(x_frame+size*5+25, 5*size/2+ y_frame+20,"  ");
-		outtextxy(5*size/2+ x_frame + 20, y_frame-25,"  ");
+
+	setcolor(color);
+	line(x_frame-50, 5*size/2+ y_frame, x_frame+size*5+50, 5*size/2+ y_frame);  // hoanh
+	line(5*size/2+ x_frame, y_frame-50, 5*size/2+x_frame, y_frame+size*5+50); 	// tung	
 		
-		frame();
-			
-	}
-	else{
-		draw_OXOY(color);		
-		draw_Triangle(x_frame-50,5*size/2+ y_frame,
-								x_frame-25,5*size/2+ y_frame-10,
-								x_frame-25,5*size/2+ y_frame+10,color);
-		draw_Triangle(x_frame+size*5+50, 5*size/2+ y_frame,
-								x_frame+size*5+25, 5*size/2+ y_frame-10,
-								x_frame+size*5+25, 5*size/2+ y_frame+10,color);
-								
-		draw_Triangle(5*size/2+ x_frame-10, y_frame-25,
-								5*size/2+ x_frame+10, y_frame-25,
-								5*size/2+ x_frame, y_frame-50, color);
-		draw_Triangle(5*size/2+x_frame-10, y_frame+size*5+25,
-								5*size/2+x_frame+10, y_frame+size*5+25,
-								5*size/2+x_frame, y_frame+size*5+50,color);
-								
-		settextstyle(3,0,2);						
-		outtextxy(x_frame+size*5+25, 5*size/2+ y_frame+20,"X");
-		outtextxy(5*size/2+ x_frame + 20, y_frame-25,"Y");
-		outtextxy(5*size/2+ x_frame-5, 5*size/2+ y_frame-10,"O");
-	}
+	draw_Triangle(x_frame-50,5*size/2+ y_frame,
+							x_frame-25,5*size/2+ y_frame-10,
+							x_frame-25,5*size/2+ y_frame+10,color);
+	draw_Triangle(x_frame+size*5+50, 5*size/2+ y_frame,
+							x_frame+size*5+25, 5*size/2+ y_frame-10,
+							x_frame+size*5+25, 5*size/2+ y_frame+10,color);
+							
+	draw_Triangle(5*size/2+ x_frame-10, y_frame-25,
+							5*size/2+ x_frame+10, y_frame-25,
+							5*size/2+ x_frame, y_frame-50, color);
+	draw_Triangle(5*size/2+x_frame-10, y_frame+size*5+25,
+							5*size/2+x_frame+10, y_frame+size*5+25,
+							5*size/2+x_frame, y_frame+size*5+50,color);
+							
+	settextstyle(3,0,2);						
+	outtextxy(x_frame+size*5+25, 5*size/2+ y_frame+20,"X");
+	outtextxy(5*size/2+ x_frame + 20, y_frame-25,"Y");
+	outtextxy(5*size/2+ x_frame-5, 5*size/2+ y_frame-10,"O");
 
 	reset_color();
 }
@@ -84,7 +55,11 @@ void clear_btn(int x,int y){
 
 void clear_Screen()
 {
-	paint_Box(0,0,5*size+x_frame+240,getmaxy(),WHITE,0);
+	outtextxy(x_frame+size*5+25, 5*size/2+ y_frame+20,"      ");
+	outtextxy(5*size/2+ x_frame + 20, y_frame-25,"      ");
+	outtextxy(5*size/2+ x_frame-5, 5*size/2+ y_frame-10,"      ");
+	
+	paint_Box(0,0,5*size+x_frame+240,getmaxy()-10,WHITE,0);
 }
 
 void interface_menu(){

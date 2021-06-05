@@ -210,9 +210,7 @@ void ve_8Diem(int xc, int yc, int x, int y, int color)
 void draw_Circle(int xc,int yc,int r,int color) {	
 
     int x = 0, y = r;
-    int f = 1 - r;
-	//put_5pixel(xc,yc,BLUE);
-	
+    int f = 1 - r;   //	5/4 - r
     ve_8Diem(xc, yc, x, y,color);
 
     while (x < y)
@@ -234,13 +232,11 @@ void Ve4diem(int xc,int yc,int x, int y, int color)
     
     put_5pixel(xc+x,yc+y,color);
     put_5pixel(xc-x,yc+y,color);
-    if(x%20== 0)
+   
+    if(x% 10 ==0)
     {
-    	put_5pixel(xc+x,yc-y,WHITE);
-    	put_5pixel(xc-x,yc-y,WHITE);
-	}else{
-		put_5pixel(xc+x,yc-y,color);
     	put_5pixel(xc-x,yc-y,color);
+    	put_5pixel(xc+x,yc-y,color);
 	}
     
    
@@ -248,58 +244,46 @@ void Ve4diem(int xc,int yc,int x, int y, int color)
 
 void draw_elipse(int xc, int yc, int a,int b,int color)
 {
-	float goc = tinhgoc(30);
-    int x, y, fx, fy, a2, b2, p;
-    
-    //put_5pixel(xc,yc,color);
-    
-    x = 0;
-    y = b;
-    a2 = a*a;
-    b2 = b*b;
-    fx = 0;
-    fy = 2 * a2 * y;
-    
-    
-    
-    Ve4diem(xc, yc, x, y,color);
-    p = ROUND(b2 -(a2*b) + (0.25*a2));//p=b2 - a2*b +a2/4
-    while(fx<fy)
+	float p,a2,b2;
+    int x,y;
+    a2=pow(a,2);
+    b2=pow(b,2);
+    x=0;
+    y=b;
+     
+    p=2*((float)b2/a2)-(2*b)+1;
+     
+    //ve nhanh thu 1(tu tren xuong )
+    while(((float)b2/a2)*x<=y)
     {
-        x+=5;
-        fx += 5*2*b2;
+        Ve4diem(xc,yc,x,y,color);
         if(p<0)
-        {	
-            p += b2*(2*x + 3);//p=p + b2*(2x +3)
+        {
+            p=p+2*((float)b2/a2)*(2*x+3);
         }
-        else
-        {	
+        else{
+            p= p- 4*y + 2*((float)b2/a2)*(2*x+3);
             y-=5;
-            p += b2*(2*x +3) + a2*(2- 2*y);//p=p +b2(2x +3) +a2(2-2y)
-            fy -= 5*2*a2;
         }
-      
-        Ve4diem(xc, yc, x, y,color);
+        x+=5;
     }
-    p = ROUND(b2*(x +0.5)*(x +0.5) + a2*(y-1)*(y-1) - a2*b2);
-    //
-    while(y>0)
+    //ve nhanh thu 2(tu duoi len )
+    y=0;
+    x=a;
+    p=2*((float)a2/b2)-2*a+1;
+    while(((float)a2/b2)*y<=x)
     {
-        y-=5;
-        fy -= 5*2*a2;
-        
-        if(p >=0)
+        Ve4diem(xc,yc,x,y,color);
+        if(p<0)
         {
-            p += a2*(3-2*y); //p=p +a2(3-2y)
+            p=p +2*((float)a2/b2)*(2*y+3);
         }
         else
         {
-            x+=5;
-            fx += 5*2*b2;
-            p += b2*(2*x +2) +a2*(3- 2*y);//p=p+ b2(2x +2) + a2(3-2y)
+            p=p- 4*x + 2*((float)a2/b2)*(2*y+3);
+            x-=5;
         }
-       	
-        Ve4diem(xc, yc, x, y,color);
+        y+=5;
     }
 }
 

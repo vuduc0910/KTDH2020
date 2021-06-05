@@ -97,6 +97,7 @@ void vekim(float O[3],int bk,float d1,float d2,float d3){
 				return;
 			}
 		}
+		draw_OXY(BLUE);
     }
 }
 void gocdau(int gio,int phut,int giay, float &d1, float &d2, float &d3){

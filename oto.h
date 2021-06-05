@@ -7,7 +7,6 @@
 
 using namespace std;
 
-void MTTT(float xtt, float ytt, float mttt[3][3]);
-int KQTT(float x, float y, float xtt,float ytt, float &xd , float &yd);
+
 void draw_oto();
 
